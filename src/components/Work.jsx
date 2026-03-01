@@ -90,8 +90,8 @@ const education = [
 
 export default function Work() {
   return (
-    <section id="work" className="relative py-28">
-      <div className="section-divider mb-28" />
+    <section id="work" className="relative py-20">
+      <div className="section-divider mb-16" />
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Section header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-16">

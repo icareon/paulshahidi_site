@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28">
-      <div className="section-divider mb-28" />
+    <section id="contact" className="relative py-20">
+      <div className="section-divider mb-16" />
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Label */}
@@ -25,7 +25,7 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="mt-28">
+      <div className="mt-16">
         <div className="section-divider" />
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-8 flex items-center justify-between">
           <span className="font-mono text-[10px] tracking-widest text-muted/40">

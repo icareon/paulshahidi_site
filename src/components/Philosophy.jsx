@@ -8,8 +8,8 @@ const observations = [
 
 export default function Philosophy() {
   return (
-    <section id="philosophy" className="relative py-28">
-      <div className="section-divider mb-28" />
+    <section id="philosophy" className="relative py-20">
+      <div className="section-divider mb-16" />
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Label */}
