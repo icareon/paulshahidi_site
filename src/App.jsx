@@ -15,8 +15,8 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Portfolio />
         <FocusAreas />
+        <Portfolio />
         <Work />
         <Thinking />
         <Philosophy />

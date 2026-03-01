@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Radial vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#0c1017" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#0c1017" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0c1017" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <!-- Subtle matte gradient base -->
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1219"/>
+      <stop offset="35%" stop-color="#0c1017"/>
+      <stop offset="65%" stop-color="#0d1118"/>
+      <stop offset="100%" stop-color="#0b0f16"/>
+    </linearGradient>
+
+    <!-- Very faint node glow -->
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7a9bbd" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7a9bbd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#baseGrad)"/>
+
+  <!-- Abstract cyber-physical diagram — ultra-thin monochrome linework -->
+  <g opacity="0.04" stroke="#c0cdd8" fill="none">
+    <!-- Primary structural lines — sparse geometric framework -->
+    <line x1="1180" y1="280" x2="1460" y2="420" stroke-width="0.5"/>
+    <line x1="1460" y1="420" x2="1580" y2="340" stroke-width="0.5"/>
+    <line x1="1580" y1="340" x2="1720" y2="480" stroke-width="0.5"/>
+    <line x1="1460" y1="420" x2="1520" y2="580" stroke-width="0.5"/>
+    <line x1="1180" y1="280" x2="1240" y2="480" stroke-width="0.5"/>
+    <line x1="1240" y1="480" x2="1460" y2="420" stroke-width="0.4"/>
+    <line x1="1240" y1="480" x2="1520" y2="580" stroke-width="0.4"/>
+    <line x1="1520" y1="580" x2="1720" y2="480" stroke-width="0.4"/>
+
+    <!-- Secondary cluster — lower right -->
+    <line x1="1520" y1="580" x2="1620" y2="720" stroke-width="0.4"/>
+    <line x1="1620" y1="720" x2="1760" y2="680" stroke-width="0.4"/>
+    <line x1="1720" y1="480" x2="1760" y2="680" stroke-width="0.35"/>
+    <line x1="1620" y1="720" x2="1540" y2="820" stroke-width="0.35"/>
+
+    <!-- Tertiary traces — far right edge -->
+    <line x1="1760" y1="680" x2="1860" y2="620" stroke-width="0.3"/>
+    <line x1="1720" y1="480" x2="1850" y2="440" stroke-width="0.3"/>
+    <line x1="1850" y1="440" x2="1860" y2="620" stroke-width="0.3"/>
+
+    <!-- Upper sparse cluster -->
+    <line x1="1180" y1="280" x2="1100" y2="180" stroke-width="0.35"/>
+    <line x1="1100" y1="180" x2="1280" y2="140" stroke-width="0.35"/>
+    <line x1="1280" y1="140" x2="1400" y2="220" stroke-width="0.35"/>
+    <line x1="1400" y1="220" x2="1580" y2="340" stroke-width="0.3"/>
+    <line x1="1280" y1="140" x2="1180" y2="280" stroke-width="0.3"/>
+
+    <!-- Isolated floating connections -->
+    <line x1="1400" y1="220" x2="1460" y2="420" stroke-width="0.3"/>
+    <line x1="1100" y1="180" x2="980" y2="240" stroke-width="0.25"/>
+    <line x1="980" y1="240" x2="1040" y2="380" stroke-width="0.25"/>
+    <line x1="1040" y1="380" x2="1240" y2="480" stroke-width="0.25"/>
+    <line x1="980" y1="240" x2="1180" y2="280" stroke-width="0.2"/>
+  </g>
+
+  <!-- Node points — small circles at intersections -->
+  <g opacity="0.05" fill="#c0cdd8">
+    <!-- Primary nodes -->
+    <circle cx="1180" cy="280" r="2.5"/>
+    <circle cx="1460" cy="420" r="3"/>
+    <circle cx="1580" cy="340" r="2"/>
+    <circle cx="1720" cy="480" r="2.5"/>
+    <circle cx="1240" cy="480" r="2"/>
+    <circle cx="1520" cy="580" r="2.5"/>
+
+    <!-- Secondary nodes -->
+    <circle cx="1620" cy="720" r="2"/>
+    <circle cx="1760" cy="680" r="1.8"/>
+    <circle cx="1540" cy="820" r="1.5"/>
+    <circle cx="1850" cy="440" r="1.5"/>
+    <circle cx="1860" cy="620" r="1.5"/>
+
+    <!-- Upper nodes -->
+    <circle cx="1100" cy="180" r="1.8"/>
+    <circle cx="1280" cy="140" r="2"/>
+    <circle cx="1400" cy="220" r="1.8"/>
+
+    <!-- Distant nodes -->
+    <circle cx="980" cy="240" r="1.5"/>
+    <circle cx="1040" cy="380" r="1.5"/>
+  </g>
+
+  <!-- Very faint geometric shapes — conceptual system boundaries -->
+  <g opacity="0.025" stroke="#c0cdd8" fill="none">
+    <!-- Hexagonal hint -->
+    <polygon points="1460,390 1500,408 1500,442 1460,460 1420,442 1420,408" stroke-width="0.5"/>
+    <!-- Diamond shape -->
+    <polygon points="1180,260 1200,280 1180,300 1160,280" stroke-width="0.5"/>
+    <!-- Small rectangle — system block hint -->
+    <rect x="1700" y="465" width="40" height="30" stroke-width="0.4" rx="1"/>
+    <!-- Small circle — sensor node hint -->
+    <circle cx="1520" cy="580" r="12" stroke-width="0.4"/>
+    <!-- Triangle hint -->
+    <polygon points="1620,705 1640,735 1600,735" stroke-width="0.4"/>
+  </g>
+
+  <!-- Very faint dashed lines — data flow hints -->
+  <g opacity="0.02" stroke="#c0cdd8" fill="none" stroke-dasharray="8,12">
+    <line x1="1460" y1="420" x2="1460" y2="280" stroke-width="0.4"/>
+    <line x1="1520" y1="580" x2="1680" y2="580" stroke-width="0.4"/>
+    <line x1="1240" y1="480" x2="1240" y2="620" stroke-width="0.4"/>
+  </g>
+
+  <!-- Subtle node glows on key intersections -->
+  <circle cx="1460" cy="420" r="40" fill="url(#nodeGlow)"/>
+  <circle cx="1520" cy="580" r="30" fill="url(#nodeGlow)"/>
+  <circle cx="1180" cy="280" r="30" fill="url(#nodeGlow)"/>
+
+  <!-- Vignette overlay -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+
+  <!-- Top edge subtle gradient fade -->
+  <rect width="1920" height="120" fill="url(#topFade)"/>
+  <defs>
+    <linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1017" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0c1017" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

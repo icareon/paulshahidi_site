@@ -83,7 +83,8 @@ const education = [
     degree: 'BSc, Mechanical & Process Engineering',
     school: 'TU Darmstadt',
     year: '2007',
-    icon: '/logos/tudarmstadt.png',
+    icon: '/logos/tudarmstadt-icon.svg',
+    lightBg: true,
   },
 ]
 
@@ -184,7 +185,7 @@ export default function Work() {
                   <img
                     src={edu.icon}
                     alt={edu.school}
-                    className="w-6 h-6 rounded object-contain bg-surface-elevated p-0.5 mt-0.5"
+                    className={`w-6 h-6 rounded object-contain p-0.5 mt-0.5 ${edu.lightBg ? 'bg-white/90' : 'bg-surface-elevated'}`}
                   />
                   <div>
                     <span className="text-sm font-medium text-primary block leading-tight">

@@ -42,7 +42,8 @@
       "Bash(curl -sL -o virginiatech.png \"https://www.google.com/s2/favicons?domain=vt.edu&sz=128\")",
       "Bash(curl -sL -o tudarmstadt.png \"https://www.google.com/s2/favicons?domain=tu-darmstadt.de&sz=128\")",
       "WebFetch(domain:www.tu-darmstadt.de)",
-      "Bash(curl -sL -o /Users/parhamshahidi/Documents/website/public/logos/tudarmstadt.svg \"https://www.tu-darmstadt.de/media/resources/images_1/tu_logo_web_h120.svg\")"
+      "Bash(curl -sL -o /Users/parhamshahidi/Documents/website/public/logos/tudarmstadt.svg \"https://www.tu-darmstadt.de/media/resources/images_1/tu_logo_web_h120.svg\")",
+      "Bash(python3 -c \":*)"
     ]
   }
 }
