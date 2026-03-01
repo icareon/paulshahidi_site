@@ -26,6 +26,7 @@ export default function Nav() {
         </a>
         <div className="flex items-center gap-5 md:gap-8">
           {[
+            ['Focus', '#focus'],
             ['Portfolio', '#portfolio'],
             ['Experience', '#work'],
             ['Thinking', '#thinking'],

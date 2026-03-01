@@ -48,6 +48,7 @@ export default function Hero() {
           {/* Navigation links */}
           <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-8">
             {[
+              ['Focus', '#focus'],
               ['Portfolio', '#portfolio'],
               ['Experience', '#work'],
               ['Thinking', '#thinking'],
