@@ -1,9 +1,9 @@
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-20">
-      <div className="section-divider mb-16" />
+    <section id="contact" className="relative py-12 md:py-20">
+      <div className="section-divider mb-10 md:mb-16" />
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
           {/* Label */}
           <div className="lg:col-span-3">
             <span className="font-mono text-xs tracking-widest text-muted uppercase">

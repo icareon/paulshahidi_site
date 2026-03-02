@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden">
       {/* Hero background image */}
       <div
         className="absolute inset-0 z-0"
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="h-px bg-signal/12 signal-line w-32" style={{ animationDuration: '16s', animationDelay: '2s' }} />
       </div>
 
-      <div className="relative z-[3] max-w-6xl mx-auto px-6 md:px-8 pt-24 pb-32">
+      <div className="relative z-[3] max-w-6xl mx-auto px-6 md:px-8 pt-24 pb-16 md:pb-32">
         <div className="space-y-8">
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-primary leading-none">

@@ -47,37 +47,50 @@ export default function Nav() {
           ))}
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-5 h-px bg-muted transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[4px]' : ''}`} />
-          <span className={`block w-5 h-px bg-muted transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px bg-muted transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[4px]' : ''}`} />
-        </button>
+        {/* Mobile hamburger — hidden when menu is open */}
+        {!menuOpen && (
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden w-10 h-10 flex items-center justify-center"
+            aria-label="Open menu"
+          >
+            <div className="flex flex-col gap-[5px]">
+              <span className="block w-5 h-[2px] rounded-full bg-muted" />
+              <span className="block w-5 h-[2px] rounded-full bg-muted" />
+              <span className="block w-5 h-[2px] rounded-full bg-muted" />
+            </div>
+          </button>
+        )}
+
+        {/* Mobile close — shown when menu is open, same position */}
+        {menuOpen && (
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="md:hidden w-10 h-10 flex items-center justify-center"
+            aria-label="Close menu"
+          >
+            <span className="text-primary text-xl leading-none">&#x2715;</span>
+          </button>
+        )}
       </div>
 
       {/* Mobile dropdown */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-6 pb-6 flex flex-col gap-4">
-          {links.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase"
-            >
-              {label}
-            </a>
-          ))}
+      {menuOpen && (
+        <div className="md:hidden">
+          <div className="max-w-6xl mx-auto px-6 pb-6 flex flex-col gap-4">
+            {links.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   )
 }
