@@ -192,12 +192,15 @@ function StartupCard({ startup }) {
     setExpanded(!expanded)
   }
 
+  // Only use hover expand/collapse for true mouse devices
+  const canHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches
+
   return (
     <div
       className="group relative bg-surface border border-border-subtle hover:border-neutral-700 transition-all cursor-pointer"
       onClick={handleCardClick}
-      onMouseEnter={() => setExpanded(true)}
-      onMouseLeave={() => setExpanded(false)}
+      onMouseEnter={canHover ? () => setExpanded(true) : undefined}
+      onMouseLeave={canHover ? () => setExpanded(false) : undefined}
     >
       <div className="p-6 md:p-8 space-y-4">
         {/* Header: logo + status */}
