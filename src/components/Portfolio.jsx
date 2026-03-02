@@ -186,19 +186,31 @@ function LogoDisplay({ startup }) {
 function StartupCard({ startup }) {
   const [expanded, setExpanded] = useState(false)
 
+  const handleCardClick = (e) => {
+    // Don't toggle if clicking a link (name/logo)
+    if (e.target.closest('a')) return
+    setExpanded(!expanded)
+  }
+
   return (
-    <a
-      href={startup.website}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative bg-surface border border-border-subtle hover:border-neutral-700 transition-all block"
+    <div
+      className="group relative bg-surface border border-border-subtle hover:border-neutral-700 transition-all cursor-pointer"
+      onClick={handleCardClick}
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
     >
       <div className="p-6 md:p-8 space-y-4">
         {/* Header: logo + status */}
         <div className="flex items-start justify-between gap-4">
-          <LogoDisplay startup={startup} />
+          <a
+            href={startup.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <LogoDisplay startup={startup} />
+          </a>
           <span
             className={`inline-flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase shrink-0 ${
               startup.status === 'Active' ? 'text-emerald-500' : 'text-sky-500'
@@ -215,10 +227,18 @@ function StartupCard({ startup }) {
           </span>
         </div>
 
-        {/* Name */}
-        <h3 className="text-lg font-semibold text-primary tracking-tight group-hover:text-signal transition-colors">
-          {startup.name}
-        </h3>
+        {/* Name — clickable link */}
+        <a
+          href={startup.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <h3 className="text-lg font-semibold text-primary tracking-tight hover:text-signal transition-colors">
+            {startup.name}
+          </h3>
+        </a>
 
         {/* Industry + Location */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -236,7 +256,17 @@ function StartupCard({ startup }) {
           {startup.brief}
         </p>
 
-        {/* Expanded detail on hover */}
+        {/* Expand indicator */}
+        <div className="flex items-center gap-2 md:hidden">
+          <span className="font-mono text-[10px] tracking-wider text-muted/60 uppercase">
+            {expanded ? 'Less' : 'Details'}
+          </span>
+          <span className={`text-muted/60 text-xs transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
+            ▾
+          </span>
+        </div>
+
+        {/* Expanded detail */}
         <div
           className={`overflow-hidden transition-all duration-300 ${
             expanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -262,7 +292,7 @@ function StartupCard({ startup }) {
         {/* Corner accent */}
         <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-neutral-800 group-hover:border-neutral-600 transition-colors" />
       </div>
-    </a>
+    </div>
   )
 }
 
