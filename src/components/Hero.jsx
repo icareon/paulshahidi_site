@@ -40,7 +40,7 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-base md:text-lg text-muted max-w-2xl leading-relaxed">
-            14+ years building AI-powered inspection, predictive maintenance,
+            Building AI-powered inspection, predictive maintenance,
             and quality analytics systems in production environments. From
             sensor-level algorithms to product strategy at scale.
           </p>

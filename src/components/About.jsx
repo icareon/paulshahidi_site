@@ -14,43 +14,37 @@ export default function About() {
           {/* Content */}
           <div className="lg:col-span-9 space-y-6 text-accent leading-relaxed text-base md:text-lg">
             <p>
-              I started in mechanical engineering at TU Darmstadt, earned a
-              PhD at Virginia Tech, and spent the first part of my career
-              building ML-based predictive maintenance systems for railroad
-              safety components at Amsted Rail. That work -- MEMS sensor data,
-              on-board signal processing, failure detection for wheels,
-              bearings, and motors -- taught me what it means to deploy
-              algorithms where the operating environment does not cooperate.
+              I build AI/ML quality systems for high-volume
+              manufacturing&mdash;where performance is predicated on robustness
+              against variability, throughput pressure, and continuous change.
+              My work is focused on combining operational metrics, AI-guided
+              vision systems, and predictive maintenance into production
+              platforms that turn sensing and factory data into decisions
+              engineers trust.
             </p>
             <p>
-              From there I moved to PARC, working on data-driven machine
-              learning for cyber-physical systems and safety-sensitive
-              transportation. Then to Apple, where over seven years I
-              progressed from ML engineer to product lead for AI/ML in
-              manufacturing quality. I built the product vision and roadmap
-              for AI-powered inspection robot platforms across iPhone, Watch,
-              Mac, iPad, and Vision Pro -- taking systems from whiteboard
-              concepts through deployment at production scale.
+              At Anduril, I lead quality analytics, architecting systems that
+              help manufacturing teams surface patterns early and translate
+              them into applications that improve accuracy and execution on
+              the factory floor.
             </p>
             <p>
-              Currently at Anduril, I lead quality analytics as a senior
-              manager, architecting AI/ML systems that help manufacturing
-              quality engineers uncover patterns in production data and turn
-              those patterns into applications that improve accuracy and
-              decision-making on the factory floor.
+              At Apple, I scaled AI inspection from concept to production
+              impact&mdash;achieving &lt;0.5% false negative rates in
+              safety-critical detection and sustaining 95%+ production accuracy
+              with measurement and governance that hold under real operational
+              drift. The result was consumer-electronics manufacturing quality
+              that approaches aerospace-grade expectations: high confidence,
+              low escape risk, and stability at scale.
             </p>
             <p>
-              Outside of full-time work, I mentor deep-tech startups through
-              the German Accelerator / Start2 Group, advising founders on
-              product-market fit, US market entry, and go-to-market strategy.
-              I also completed the Stanford GSB LEAD executive program and
-              have served as a PhD committee member and adjunct professor.
-            </p>
-            <p>
-              Most of my career has been about the same thing: getting AI to
-              work reliably in manufacturing environments where the gap
-              between a demo and a deployed system is large, and where the
-              cost of getting it wrong is measured in real production impact.
+              Rethinking manufacturing around a resilient domestic industrial
+              base is the imperative guiding my work. Point solutions and
+              isolated models are no longer enough&mdash;the next generation
+              will be built on AI-native factories where AI is the native
+              operating intelligence: always-on perception and learning that
+              drives high-efficiency execution and keeps quality and throughput
+              stable as conditions change.
             </p>
           </div>
         </div>
