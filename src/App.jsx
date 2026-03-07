@@ -6,6 +6,7 @@ import Work from './components/Work'
 import Thinking from './components/Thinking'
 import Philosophy from './components/Philosophy'
 import Portfolio from './components/Portfolio'
+import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 
 export default function App() {
@@ -17,9 +18,10 @@ export default function App() {
         <About />
         <FocusAreas />
         <Portfolio />
+        <Testimonials />
         <Work />
-        <Thinking />
         <Philosophy />
+        <Thinking />
         <Contact />
       </main>
     </div>

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const observations = [
   'Industrial AI is less about model accuracy and more about integration, reliability, and change management.',
   'The best quality systems are the ones that manufacturing engineers actually use every day.',
@@ -7,6 +9,8 @@ const observations = [
 ]
 
 export default function Philosophy() {
+  const [showAll, setShowAll] = useState(false)
+
   return (
     <section id="philosophy" className="relative py-12 md:py-20">
       <div className="section-divider mb-10 md:mb-16" />
@@ -23,13 +27,29 @@ export default function Philosophy() {
           <div className="lg:col-span-9">
             <div className="space-y-0">
               {observations.map((obs, i) => (
-                <div key={i} className="py-5 border-b border-border-subtle last:border-0">
-                  <p className="text-base md:text-lg font-light text-accent leading-relaxed">
+                <div
+                  key={i}
+                  className={`py-6 md:py-7 border-b border-border-subtle last:border-0 ${
+                    !showAll && i >= 3 ? 'hidden md:block' : ''
+                  }`}
+                >
+                  <p className="text-base md:text-lg font-light text-accent leading-loose max-w-2xl">
                     {obs}
                   </p>
                 </div>
               ))}
             </div>
+
+            {/* Mobile toggle for additional observations */}
+            {!showAll && observations.length > 3 && (
+              <button
+                onClick={() => setShowAll(true)}
+                className="md:hidden group flex items-center gap-2 font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase mt-4"
+              >
+                <span className="inline-block w-4 h-px bg-muted group-hover:w-8 group-hover:bg-primary transition-all duration-200" />
+                Show all
+              </button>
+            )}
           </div>
         </div>
       </div>

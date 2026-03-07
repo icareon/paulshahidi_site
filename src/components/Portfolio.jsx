@@ -2,6 +2,40 @@ import { useState } from 'react'
 
 const startups = [
   {
+    name: 'Red Cable Robots',
+    icon: null,
+    logo: '/logos/redcablerobots.png',
+    logoStyle: 'favicon',
+    website: 'https://www.redcablerobots.com',
+    status: 'Active',
+    industry: 'Robotics / Intralogistics',
+    location: 'Duisburg, Germany',
+    brief: 'Industrial cable robots for large-area automation.',
+    description:
+      'Cable robot system moves objects with millimeter precision across workspaces the size of a tennis court. Enables automation in spaces where conventional robots cannot operate cost-effectively: palletizing, machine tending, and material handling across multiple stations with a single system.',
+    highlights: [
+      'Top 50 Slush startup by General Catalyst & Cherry Ventures',
+      'University of Duisburg-Essen spin-off',
+    ],
+  },
+  {
+    name: 'LexaTexer',
+    icon: null,
+    logo: '/logos/lexatexer.png',
+    logoStyle: 'favicon',
+    website: 'https://www.lexatexer.com',
+    status: 'Active',
+    industry: 'Enterprise AI / Compliance',
+    location: 'Berlin, Germany',
+    brief: 'AI-driven audit and compliance automation across industries.',
+    description:
+      'Platform automates evidence collection and reporting for RoHS, WEEE, ISO 27001, NIST, and COBIT standards. Originally focused on predictive analytics for automotive OEMs and tier-1 suppliers, expanded to compliance automation across aerospace, maritime, and defense.',
+    highlights: [
+      'Increased OEE by 3-17% for automotive clients',
+      'Operations in Germany, Singapore & Southeast Asia',
+    ],
+  },
+  {
     name: 'Quantum Diamonds',
     icon: null,
     logo: '/logos/quantumdiamonds_wordmark.png',
@@ -16,6 +50,23 @@ const startups = [
     highlights: [
       'First commercial quantum device for semiconductor failure analysis',
       'Deployments in US, Europe & Taiwan',
+    ],
+  },
+  {
+    name: 'CeiliX',
+    icon: null,
+    logo: '/logos/ceilix.png',
+    logoStyle: 'default',
+    website: 'https://ceilix.com',
+    status: 'Completed',
+    industry: 'Robotics / Industrial Automation',
+    location: 'Euskirchen, Germany',
+    brief: 'Overhead mobility systems moving automation from floor to ceiling.',
+    description:
+      'Patented InfinityCrane enables omnidirectional, unrestricted movement along ceiling-mounted track systems. In collaboration with Kassow Robots by Bosch Rexroth, their Mobile Ceiling-Cobot creates up to 50% additional floor space in production and logistics facilities.',
+    highlights: [
+      'North American debut at Automate 2025',
+      'Partnership with Bosch Rexroth / Kassow Robots',
     ],
   },
   {
@@ -53,57 +104,6 @@ const startups = [
     ],
   },
   {
-    name: 'CeiliX',
-    icon: null,
-    logo: '/logos/ceilix.png',
-    logoStyle: 'default',
-    website: 'https://ceilix.com',
-    status: 'Completed',
-    industry: 'Robotics / Industrial Automation',
-    location: 'Euskirchen, Germany',
-    brief: 'Overhead mobility systems moving automation from floor to ceiling.',
-    description:
-      'Patented InfinityCrane enables omnidirectional, unrestricted movement along ceiling-mounted track systems. In collaboration with Kassow Robots by Bosch Rexroth, their Mobile Ceiling-Cobot creates up to 50% additional floor space in production and logistics facilities.',
-    highlights: [
-      'North American debut at Automate 2025',
-      'Partnership with Bosch Rexroth / Kassow Robots',
-    ],
-  },
-  {
-    name: 'LexaTexer',
-    icon: null,
-    logo: '/logos/lexatexer.png',
-    logoStyle: 'favicon',
-    website: 'https://www.lexatexer.com',
-    status: 'Active',
-    industry: 'Enterprise AI / Compliance',
-    location: 'Berlin, Germany',
-    brief: 'AI-driven audit and compliance automation across industries.',
-    description:
-      'Platform automates evidence collection and reporting for RoHS, WEEE, ISO 27001, NIST, and COBIT standards. Originally focused on predictive analytics for automotive OEMs and tier-1 suppliers, expanded to compliance automation across aerospace, maritime, and defense.',
-    highlights: [
-      'Increased OEE by 3-17% for automotive clients',
-      'Operations in Germany, Singapore & Southeast Asia',
-    ],
-  },
-  {
-    name: 'Red Cable Robots',
-    icon: null,
-    logo: '/logos/redcablerobots.png',
-    logoStyle: 'favicon',
-    website: 'https://www.redcablerobots.com',
-    status: 'Active',
-    industry: 'Robotics / Intralogistics',
-    location: 'Duisburg, Germany',
-    brief: 'Industrial cable robots for large-area automation.',
-    description:
-      'Cable robot system moves objects with millimeter precision across workspaces the size of a tennis court. Enables automation in spaces where conventional robots cannot operate cost-effectively -- palletizing, machine tending, and material handling across multiple stations with a single system.',
-    highlights: [
-      'Top 50 Slush startup by General Catalyst & Cherry Ventures',
-      'University of Duisburg-Essen spin-off',
-    ],
-  },
-  {
     name: 'Wahtari',
     icon: null,
     logo: '/logos/wahtari.png',
@@ -114,7 +114,7 @@ const startups = [
     location: 'Munich, Germany',
     brief: 'Modular hardware and software for AI-based computer vision at the edge.',
     description:
-      'Platform includes the nCam AI-powered smart camera, nGin SDK, and Linux-based nOS for building custom vision applications. Specializes in optical quality inspection, license plate recognition, and industrial quality control -- all running AI at the edge with end-to-end encryption.',
+      'Platform includes the nCam AI-powered smart camera, nGin SDK, and Linux-based nOS for building custom vision applications. Specializes in optical quality inspection, license plate recognition, and industrial quality control, all running AI at the edge with end-to-end encryption.',
     highlights: [
       'Hardware + software platform for edge AI vision',
       'Docker-based app ecosystem',
@@ -197,12 +197,12 @@ function StartupCard({ startup }) {
 
   return (
     <div
-      className="group relative bg-surface border border-border-subtle hover:border-neutral-700 transition-all cursor-pointer"
+      className="group relative bg-surface border border-border-subtle hover:border-neutral-700 hover:bg-surface-elevated transition-all duration-200 cursor-pointer"
       onClick={handleCardClick}
       onMouseEnter={canHover ? () => setExpanded(true) : undefined}
       onMouseLeave={canHover ? () => setExpanded(false) : undefined}
     >
-      <div className="p-6 md:p-8 space-y-4">
+      <div className="p-7 md:p-9 space-y-4">
         {/* Header: logo + status */}
         <div className="flex items-start justify-between gap-4">
           <a
@@ -353,7 +353,7 @@ export default function Portfolio() {
         </div>
 
         {/* Startup grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-subtle">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {filtered.map((startup) => (
             <StartupCard key={startup.name} startup={startup} />
           ))}

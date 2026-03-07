@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const experiences = [
   {
     id: '01',
@@ -88,6 +90,73 @@ const education = [
   },
 ]
 
+function ExperienceCard({ exp }) {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <div className="border border-border-subtle hover:border-neutral-700 transition-colors bg-surface">
+      {/* Always-visible header */}
+      <div
+        className="p-7 md:p-9 cursor-pointer"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <img
+              src={exp.icon}
+              alt={exp.context}
+              className="w-8 h-8 rounded object-contain bg-surface-elevated p-0.5"
+            />
+            <div>
+              <span className="text-base font-semibold text-primary block leading-tight">
+                {exp.context}
+              </span>
+              <span className="font-mono text-[10px] text-muted/60">
+                {exp.period}
+              </span>
+            </div>
+          </div>
+          <span className={`text-muted/60 text-xs transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
+            ▾
+          </span>
+        </div>
+        <h3 className="text-base font-semibold text-primary/90 tracking-tight mt-4">
+          {exp.name}
+        </h3>
+        <p className="text-sm text-accent leading-relaxed mt-3">
+          {exp.role}
+        </p>
+      </div>
+
+      {/* Collapsible detail */}
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          expanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-7 md:px-9 pb-7 md:pb-9 space-y-5 border-t border-border-subtle pt-5">
+          <div>
+            <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-2">
+              Work
+            </span>
+            <p className="text-sm text-accent leading-relaxed">
+              {exp.work}
+            </p>
+          </div>
+          <div>
+            <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-2">
+              Outcome
+            </span>
+            <p className="text-sm text-accent leading-relaxed">
+              {exp.outcome}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Work() {
   return (
     <section id="work" className="relative py-12 md:py-20">
@@ -97,7 +166,7 @@ export default function Work() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-10 md:mb-16">
           <div className="lg:col-span-3">
             <span className="font-mono text-xs tracking-widest text-muted uppercase">
-              Experience
+              Experience &amp; Background
             </span>
           </div>
           <div className="lg:col-span-9">
@@ -108,99 +177,44 @@ export default function Work() {
           </div>
         </div>
 
-        {/* Experiences */}
-        <div className="space-y-0">
-          {experiences.map((exp, i) => (
-            <div key={exp.id}>
-              {i > 0 && <div className="section-divider" />}
-              <div className="py-12 md:py-14">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-                  {/* Meta */}
-                  <div className="lg:col-span-3">
-                    <div className="flex items-center gap-3 mb-3">
-                      <img
-                        src={exp.icon}
-                        alt={exp.context}
-                        className="w-7 h-7 rounded object-contain bg-surface-elevated p-0.5"
-                      />
-                      <div>
-                        <span className="text-sm font-medium text-primary block leading-tight">
-                          {exp.context}
-                        </span>
-                        <span className="font-mono text-[10px] text-muted/60">
-                          {exp.period}
-                        </span>
-                      </div>
-                    </div>
-                    <h3 className="text-base font-semibold text-primary/90 tracking-tight mt-2">
-                      {exp.name}
-                    </h3>
-                  </div>
+        {/* Professional Experience subsection label */}
+        <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-5">
+          Professional Experience
+        </span>
 
-                  {/* Details */}
-                  <div className="lg:col-span-9 space-y-5">
-                    <div>
-                      <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-2">
-                        Role
-                      </span>
-                      <p className="text-sm text-accent leading-relaxed">
-                        {exp.role}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-2">
-                        Work
-                      </span>
-                      <p className="text-sm text-accent leading-relaxed">
-                        {exp.work}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-2">
-                        Outcome
-                      </span>
-                      <p className="text-sm text-accent leading-relaxed">
-                        {exp.outcome}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Experience cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
+          {experiences.map((exp) => (
+            <ExperienceCard key={exp.id} exp={exp} />
           ))}
         </div>
 
-        {/* Education */}
-        <div className="section-divider mt-4 mb-10 md:mb-14" />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
-          <div className="lg:col-span-3">
-            <span className="font-mono text-xs tracking-widest text-muted uppercase">
-              Education
-            </span>
-          </div>
-          <div className="lg:col-span-9">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {education.map((edu) => (
-                <div key={edu.year} className="flex items-start gap-3">
-                  <img
-                    src={edu.icon}
-                    alt={edu.school}
-                    className={`w-6 h-6 rounded object-contain p-0.5 mt-0.5 ${edu.lightBg ? 'bg-white/90' : 'bg-surface-elevated'}`}
-                  />
-                  <div>
-                    <span className="text-sm font-medium text-primary block leading-tight">
-                      {edu.degree}
-                    </span>
-                    <span className="text-xs text-muted block mt-0.5">
-                      {edu.school}
-                    </span>
-                    <span className="font-mono text-[10px] text-muted/50 block mt-0.5">
-                      {edu.year}
-                    </span>
-                  </div>
+        {/* Education — compact block within Experience */}
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-border-subtle">
+          <span className="font-mono text-[10px] tracking-widest text-muted/50 uppercase block mb-5">
+            Education
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {education.map((edu) => (
+              <div key={edu.year} className="flex items-start gap-3">
+                <img
+                  src={edu.icon}
+                  alt={edu.school}
+                  className={`w-6 h-6 rounded object-contain p-0.5 mt-0.5 ${edu.lightBg ? 'bg-white/90' : 'bg-surface-elevated'}`}
+                />
+                <div>
+                  <span className="text-sm font-medium text-primary block leading-tight">
+                    {edu.degree}
+                  </span>
+                  <span className="text-xs text-muted block mt-0.5">
+                    {edu.school}
+                  </span>
+                  <span className="font-mono text-[10px] text-muted/50 block mt-0.5">
+                    {edu.year}
+                  </span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

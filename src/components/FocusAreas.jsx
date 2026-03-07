@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const areas = [
   {
     title: 'AI-Powered Visual Inspection',
@@ -9,13 +11,13 @@ const areas = [
     title: 'Predictive Maintenance & Prognostics',
     id: '02',
     description:
-      'Developing ML algorithms that use sensor data -- vibration, current, temperature, acoustic signals -- to detect component degradation before failure occurs. I have worked on this in both rail transportation (MEMS-based on-board monitoring) and manufacturing settings. The practical constraint is always the same: models need to be sensitive enough to catch real issues without generating false alarms that erode operator trust.',
+      'Developing ML algorithms that use sensor data (vibration, current, temperature, acoustic signals) to detect component degradation before failure occurs. I have worked on this in both rail transportation (MEMS-based on-board monitoring) and manufacturing settings. The practical constraint is always the same: models need to be sensitive enough to catch real issues without generating false alarms that erode operator trust.',
   },
   {
     title: 'Manufacturing Quality Analytics',
     id: '03',
     description:
-      'Using data from production systems to identify quality patterns, root causes, and process drift. This means building analytics platforms and AI applications that quality engineers actually use day-to-day -- not dashboards that look good in a demo but get ignored in practice. Good quality analytics requires understanding both the data pipeline and the decisions the data needs to support.',
+      'Using data from production systems to identify quality patterns, root causes, and process drift. This means building analytics platforms and AI applications that quality engineers actually use day-to-day, not dashboards that look good in a demo but get ignored in practice. Good quality analytics requires understanding both the data pipeline and the decisions the data needs to support.',
   },
   {
     title: 'ML Deployment in Production',
@@ -30,6 +32,53 @@ const areas = [
       'Translating technical capabilities into product roadmaps that balance user needs with business objectives. This includes user research with manufacturing quality engineers, PRD development, feature prioritization, and cross-functional execution. I have done this both internally at scale and externally through startup mentoring, helping founders validate product-market fit and develop go-to-market strategies.',
   },
 ]
+
+function FocusCard({ area }) {
+  const [expanded, setExpanded] = useState(false)
+
+  // Split description: first sentence as excerpt, rest as detail
+  const firstSentenceEnd = area.description.indexOf('. ') + 1
+  const excerpt = area.description.slice(0, firstSentenceEnd)
+  const remainder = area.description.slice(firstSentenceEnd).trim()
+
+  return (
+    <div
+      className="relative bg-surface p-6 md:p-10 group hover:bg-surface-elevated transition-colors cursor-pointer"
+      onClick={() => setExpanded(!expanded)}
+    >
+      <div className="font-mono text-[11px] tracking-widest text-muted/50 mb-3 md:mb-4">
+        {area.id}
+      </div>
+      <h3 className="text-lg font-semibold text-primary mb-3 md:mb-4 tracking-tight">
+        {area.title}
+      </h3>
+
+      {/* Excerpt + collapsible remainder — all screen sizes */}
+      <p className="text-sm text-muted leading-relaxed">
+        {excerpt}
+      </p>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          expanded ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <p className="text-sm text-muted leading-relaxed">
+          {remainder}
+        </p>
+      </div>
+      <div className="flex items-center gap-2 mt-3">
+        <span className="font-mono text-[10px] tracking-wider text-muted/60 uppercase">
+          {expanded ? 'Less' : 'Read more'}
+        </span>
+        <span className={`text-muted/60 text-xs transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
+          ▾
+        </span>
+      </div>
+
+      <div className="corner-accent absolute" />
+    </div>
+  )
+}
 
 export default function FocusAreas() {
   return (
@@ -54,21 +103,7 @@ export default function FocusAreas() {
         {/* Areas grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-subtle">
           {areas.map((area) => (
-            <div
-              key={area.id}
-              className="relative bg-surface p-8 md:p-10 group hover:bg-surface-elevated transition-colors"
-            >
-              <div className="font-mono text-[11px] tracking-widest text-muted/50 mb-4">
-                {area.id}
-              </div>
-              <h3 className="text-lg font-semibold text-primary mb-4 tracking-tight">
-                {area.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {area.description}
-              </p>
-              <div className="corner-accent absolute" />
-            </div>
+            <FocusCard key={area.id} area={area} />
           ))}
         </div>
       </div>

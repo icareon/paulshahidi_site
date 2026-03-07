@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const essays = [
   {
     id: '01',
@@ -23,6 +25,8 @@ const essays = [
 ]
 
 export default function Thinking() {
+  const [showAll, setShowAll] = useState(false)
+
   return (
     <section id="thinking" className="relative py-12 md:py-20">
       <div className="section-divider mb-10 md:mb-16" />
@@ -45,9 +49,12 @@ export default function Thinking() {
         {/* Essays */}
         <div className="space-y-0">
           {essays.map((essay, i) => (
-            <div key={essay.id}>
+            <div
+              key={essay.id}
+              className={!showAll && i >= 1 ? 'hidden md:block' : ''}
+            >
               {i > 0 && <div className="section-divider" />}
-              <article className="group py-8 md:py-10">
+              <article className="group py-10 md:py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
                   <div className="lg:col-span-3 flex items-baseline gap-4">
                     <span className="font-mono text-xs text-muted/50">
@@ -55,10 +62,10 @@ export default function Thinking() {
                     </span>
                   </div>
                   <div className="lg:col-span-9">
-                    <h3 className="text-lg font-semibold text-primary mb-3 tracking-tight">
+                    <h3 className="text-lg font-semibold text-primary mb-4 tracking-tight">
                       {essay.title}
                     </h3>
-                    <p className="text-sm text-muted leading-relaxed max-w-2xl">
+                    <p className="text-sm text-muted leading-loose max-w-2xl">
                       {essay.abstract}
                     </p>
                   </div>
@@ -67,6 +74,17 @@ export default function Thinking() {
             </div>
           ))}
         </div>
+
+        {/* Mobile toggle for additional essays */}
+        {!showAll && essays.length > 1 && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="md:hidden group flex items-center gap-2 font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase mt-4"
+          >
+            <span className="inline-block w-4 h-px bg-muted group-hover:w-8 group-hover:bg-primary transition-all duration-200" />
+            More essays ({essays.length - 1})
+          </button>
+        )}
       </div>
     </section>
   )

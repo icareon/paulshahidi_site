@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* Positioning */}
           <p className="text-xl sm:text-2xl md:text-3xl font-light text-accent tracking-tight max-w-3xl leading-snug">
-            AI/ML product leader for manufacturing quality.
+            I build AI/ML systems for manufacturing.
           </p>
 
           {/* Description */}
