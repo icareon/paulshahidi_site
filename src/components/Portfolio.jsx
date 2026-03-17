@@ -324,9 +324,12 @@ export default function Portfolio() {
           <div className="lg:col-span-9 space-y-4">
             <p className="text-accent text-base md:text-lg leading-relaxed max-w-2xl">
               As lead mentor at German Accelerator / Start2 Group, I advise
-              German deep-tech and AI startups on product-market fit, US
-              market entry, go-to-market strategy, and commercial scaling.
-              These are the companies I work with.
+              German deep-tech startups on AI strategy spanning machine
+              learning, data pipelines, and AI-driven quality systems for
+              industrial applications. The work centers on translating these
+              systems into deployable products, driving product-market fit,
+              enterprise alignment, and U.S. market entry. These are the
+              companies I work with.
             </p>
           </div>
         </div>
