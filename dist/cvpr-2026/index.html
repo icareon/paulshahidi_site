@@ -4,86 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VISION'26 — 4th Workshop on Vision-Based Industrial Inspection @ CVPR 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --blue:    #1a56db;
-    --blue-lt: #e8f0fe;
-    --accent:  #0f3d91;
-    --gray:    #f8f9fb;
-    --border:  #e2e8f0;
-    --text:    #1a202c;
-    --muted:   #64748b;
-    --tag-bg:  #dbeafe;
-    --tag-txt: #1e40af;
-    --green:   #059669;
-    --gold:    #d97706;
+    --bg:       #0c1017;
+    --bg-card:  #131a24;
+    --border:   #1e2a38;
+    --border-s: #161f2b;
+    --text:     #e0e4e8;
+    --accent:   #9ca7b4;
+    --muted:    #6b7a8d;
+    --signal:   #7a9bbd;
+    --gold:     #b8860b;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: var(--gray);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   /* ── HEADER ─────────────────────────────────── */
   header {
-    background: linear-gradient(135deg, #0f3d91 0%, #1a56db 60%, #2563eb 100%);
-    color: #fff;
-    padding: 60px 40px 50px;
+    border-bottom: 1px solid var(--border);
+    padding: 56px 40px 48px;
     text-align: center;
   }
   header .eyebrow {
-    font-size: 0.78rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    opacity: 0.75;
-    margin-bottom: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
   }
   header h1 {
-    font-size: clamp(1.6rem, 3vw, 2.6rem);
-    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 12px;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
   }
   header .sub {
-    font-size: 1rem;
-    opacity: 0.85;
-    max-width: 640px;
+    font-size: 0.95rem;
+    color: var(--accent);
+    max-width: 600px;
     margin: 0 auto 28px;
   }
   .badges {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
     flex-wrap: wrap;
   }
   .badge {
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 20px;
-    padding: 5px 16px;
-    font-size: 0.82rem;
-    font-weight: 600;
+    border: 1px solid var(--border);
+    padding: 4px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
 
   /* ── LAYOUT ──────────────────────────────────── */
   .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px 60px;
+    padding: 0 24px 80px;
   }
 
   .section-title {
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
     color: var(--muted);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     padding: 44px 0 20px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
     margin-bottom: 28px;
   }
 
@@ -91,24 +97,29 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-    gap: 24px;
+    gap: 1px;
+    border: 1px solid var(--border);
   }
 
   .card {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border: none;
     padding: 28px 30px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    transition: box-shadow 0.2s, transform 0.2s;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    transition: background 0.2s;
+    position: relative;
   }
-  .card:hover {
-    box-shadow: 0 8px 24px rgba(26,86,219,0.12);
-    transform: translateY(-2px);
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 10px; height: 10px;
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
   }
+  .card:hover { background: #161f2b; }
 
   .card-header {
     display: flex;
@@ -117,69 +128,71 @@
   }
   .card-num {
     flex-shrink: 0;
-    width: 38px; height: 38px;
-    border-radius: 10px;
-    background: var(--blue);
-    color: #fff;
-    font-weight: 800;
-    font-size: 1rem;
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.78rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .card-meta { flex: 1; min-width: 0; }
   .card-org {
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--blue);
-    margin-bottom: 4px;
+    letter-spacing: 0.12em;
+    color: var(--signal);
+    margin-bottom: 5px;
   }
   .card-title {
-    font-size: 1.03rem;
-    font-weight: 700;
+    font-size: 0.98rem;
+    font-weight: 600;
     line-height: 1.35;
-    color: var(--accent);
+    color: var(--text);
   }
 
   .tagline {
-    background: var(--blue-lt);
-    border-left: 3px solid var(--blue);
-    border-radius: 0 8px 8px 0;
-    padding: 8px 14px;
-    font-size: 0.88rem;
+    border-left: 2px solid var(--border);
+    padding: 6px 12px;
+    font-size: 0.85rem;
     font-style: italic;
     color: var(--accent);
-    font-weight: 500;
   }
 
   .authors {
-    font-size: 0.84rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
     color: var(--muted);
   }
-  .authors strong { color: var(--text); }
+  .authors strong { color: var(--accent); font-weight: 500; }
 
   .summary {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: #374151;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--accent);
   }
+  .summary strong { color: var(--text); font-weight: 600; }
 
   .highlights {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
+    border-top: 1px solid var(--border-s);
+    padding-top: 12px;
   }
   .highlight-item {
     display: flex;
     gap: 8px;
-    font-size: 0.85rem;
-    color: #374151;
+    font-size: 0.82rem;
+    color: var(--muted);
   }
   .highlight-item::before {
     content: "▸";
-    color: var(--blue);
+    color: var(--signal);
     flex-shrink: 0;
     margin-top: 1px;
   }
@@ -187,56 +200,28 @@
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
     margin-top: 2px;
   }
   .tag {
-    background: var(--tag-bg);
-    color: var(--tag-txt);
-    border-radius: 20px;
-    padding: 3px 11px;
-    font-size: 0.74rem;
-    font-weight: 600;
-  }
-  .tag.green { background: #d1fae5; color: #065f46; }
-  .tag.gold  { background: #fef3c7; color: #92400e; }
-
-  /* ── LINKEDIN BOX ────────────────────────────── */
-  .linkedin-section {
-    margin-top: 52px;
-  }
-  .linkedin-card {
-    background: #fff;
-    border-radius: 16px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    overflow: hidden;
+    color: var(--muted);
+    padding: 2px 9px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
   }
-  .linkedin-header {
-    background: #0a66c2;
-    color: #fff;
-    padding: 18px 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-  .linkedin-header svg { opacity: 0.9; }
-  .linkedin-body {
-    padding: 28px 30px;
-    font-size: 0.92rem;
-    line-height: 1.75;
-    color: var(--text);
-    white-space: pre-wrap;
-    font-family: inherit;
-  }
+  .tag.green { border-color: #1a3a2a; color: #4ade80; }
+  .tag.gold  { border-color: #3a2a0a; color: #fbbf24; }
 
   /* ── FOOTER ──────────────────────────────────── */
   footer {
     text-align: center;
     padding: 24px;
-    font-size: 0.8rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
     color: var(--muted);
     border-top: 1px solid var(--border);
     margin-top: 40px;
@@ -245,10 +230,42 @@
   /* ── SLIDE IMAGE ─────────────────────────────── */
   .slide-img {
     width: 100%;
-    border-radius: 10px;
     border: 1px solid var(--border);
     display: block;
     object-fit: cover;
+    filter: brightness(0.9) contrast(1.05);
+  }
+
+  /* ── BACK LINK ───────────────────────────────── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 32px 0 0;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--text); }
+  .back-link::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background: var(--muted);
+    transition: width 0.2s, background 0.15s;
+  }
+  .back-link:hover::before { width: 28px; background: var(--text); }
+
+  @media (max-width: 640px) {
+    .cards { grid-template-columns: 1fr; }
+    header { padding: 40px 20px 36px; }
+    .container { padding: 0 16px 60px; }
+    .card { padding: 22px 20px; }
   }
 </style>
 </head>
@@ -266,6 +283,7 @@
 </header>
 
 <div class="container">
+  <a href="/" class="back-link">paulshahidi.com</a>
 
   <div class="section-title">Presentation Summaries</div>
 
@@ -507,29 +525,6 @@
 
   </div><!-- /cards -->
 
-  <!-- ── LINKEDIN POST ──────────────────────────── -->
-  <div class="linkedin-section">
-    <div class="section-title">LinkedIn Post</div>
-    <div class="linkedin-card">
-      <div class="linkedin-header">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn Post — Ready to Copy
-      </div>
-      <div class="linkedin-body">Spent the day at <strong>VISION'26</strong> — the Workshop on Vision-Based Industrial Inspection at <strong>CVPR 2026</strong> in Denver. Nine talks, a lot of signal.
-
-A few things that stuck with me:
-
-• <strong>Safran</strong> (Jennifer Vandoni) — noisy-label robust learning on aerospace composites, +53% accuracy at 40% label noise. Certification-ready AI is closer than you'd think.
-• <strong>Rapiscan</strong> (Dan Cristian Dinca) — AI-powered X-ray screening that generalises to threats it's never seen. Synthetic data is finally unlocking security imaging.
-• <strong>Samsung</strong> (Minjun Song) — hyperspectral imaging as the missing layer in semiconductor fabs. RGB just isn't enough.
-• <strong>AnomalyVFM</strong> (Matic Fučka et al.) — zero-shot anomaly detection with no target images needed. LoRA inside attention is a clean fix that will be widely adopted.
-• <strong>Boeing</strong> (Amir Afrasiabi) — self-validating AR trained on CAD composites before touching the factory floor. US patent 12,530,856. This is applied AI at scale.
-
-The common thread: foundation models are landing in factories, fabs, and hangars — but the hard work is in the data, the domain, and the deployment.
-
-#CVPR2026 #IndustrialAI #ComputerVision #VISION26</div>
-    </div>
-  </div>
 
 </div><!-- /container -->
 
