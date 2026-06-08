@@ -7,6 +7,7 @@ import Thinking from './components/Thinking'
 import Philosophy from './components/Philosophy'
 import Portfolio from './components/Portfolio'
 import Testimonials from './components/Testimonials'
+import CVPR2026 from './components/CVPR2026'
 import Contact from './components/Contact'
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Work />
         <Philosophy />
         <Thinking />
+        <CVPR2026 />
         <Contact />
       </main>
     </div>

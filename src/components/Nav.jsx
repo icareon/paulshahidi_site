@@ -15,6 +15,7 @@ export default function Nav() {
     ['Portfolio', '#portfolio'],
     ['Experience', '#work'],
     ['Thinking', '#thinking'],
+    ['CVPR 2026', '#cvpr2026'],
     ['Contact', '#contact'],
   ]
 
