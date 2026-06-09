@@ -120,6 +120,7 @@
     border-right: 1px solid var(--border);
   }
   .card:hover { background: #161f2b; }
+  .card.featured { order: -1; }
 
   .card-header {
     display: flex;
@@ -541,9 +542,9 @@
 
 
     <!-- ⑩ ANDURIL -->
-    <div class="card">
+    <div class="card featured">
       <div class="card-header">
-        <div class="card-num">10</div>
+        <div class="card-num" style="font-size:0.9rem;">★</div>
         <div class="card-meta">
           <div class="card-org">Anduril Industries</div>
           <div class="card-title">Why 90% of Vision Models Fail Their First Production Deployment — and What the Next Generation of Industrial Inspection Must Get Right</div>

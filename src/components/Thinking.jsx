@@ -6,9 +6,9 @@ const essays = [
     title: 'Is the Industry Finally Able to Go from Specialized Models to Zero-Shot Anomaly Detection with VLM Models?',
     date: '2026.06',
     abstract:
-      'The research I saw at CVPR this year highlighted a shift in model development for industrial systems that was exciting to see. Teams working on adapting general purpose vision language models for industrial inspection and exploring novel ways to sense, train and label data for algorithm training. It seems as if the moment for industrial inspection to go mainstream has finally arrived.',
+      'I presented at CVPR 2026\'s VISION\'26 Workshop in Denver on why most industrial vision models fail their first production deployment — covering the four compounding failure modes that define real manufacturing environments: observability limits, label taxonomy mismatches, position-dependent cost structures, and the gap between detection and corrective action. The ten talks at the workshop showed a field actively closing these gaps. Safran and Boeing demonstrated AI maturing from anomaly flagging to full material understanding and self-validating AR. Samsung and AnomalyVFM pushed on hyperspectral sensing and zero-shot detection without target images. The common thread: foundation models are landing in factories, fabs, and hangars — but the hard work is in the data, the domain, and the deployment.',
     link: '/cvpr-2026/index.html',
-    linkLabel: 'CVPR 2026 Vision Inspection AI Summary',
+    linkLabel: 'CVPR 2026 — Full Workshop Notes',
   },
   {
     id: '02',
