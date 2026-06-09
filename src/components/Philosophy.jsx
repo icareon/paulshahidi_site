@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 const observations = [
-  'Industrial AI is less about model accuracy and more about integration, reliability, and change management.',
-  'The best quality systems are the ones that manufacturing engineers actually use every day.',
-  'A 95% accurate algorithm that runs reliably in production is worth more than a 99% accurate one that does not.',
-  'Getting from prototype to production takes more organizational work than technical work.',
-  'Good product strategy in manufacturing AI starts with understanding operator workflows, not model architectures.',
+  'The imaging hardware determines the ceiling. A model cannot detect what the optics cannot resolve — and getting from 95% surface coverage to 99.5% costs more than the first 95% combined.',
+  'Manufacturing defect taxonomies are organized by root cause. Vision models learn from appearance. That mismatch is responsible for more failed deployments than any architecture choice.',
+  'Where in the line you inspect changes what the model must do. Upstream stations optimize for recall. Downstream stations, after hours of assembly, cannot afford the same operating point.',
+  'Detection without loop closure is a quality gate, not a quality system. The value comes when inspection is connected to root-cause attribution and corrective action.',
+  'A model that works at one factory and fails at another is not a model problem. It is a generalization problem the field has not solved — and it is the reason industrial AI stays in pilots.',
 ]
 
 export default function Philosophy() {
