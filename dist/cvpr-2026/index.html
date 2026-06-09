@@ -547,17 +547,18 @@
         <div class="card-num" style="font-size:0.9rem;">★</div>
         <div class="card-meta">
           <div class="card-org">Anduril Industries</div>
-          <div class="card-title">Why 90% of Vision Models Fail Their First Production Deployment — and What the Next Generation of Industrial Inspection Must Get Right</div>
+          <div class="card-title">Why 90% of Vision Models Fail Their First Production Deployment and What the Next Generation of Industrial Inspection Must Get Right</div>
         </div>
       </div>
-      <div class="tagline">"Production failure is not a model problem. It is an integration, label, position, and generalization problem — compounded at scale."</div>
-      <div class="authors"><strong>Paul Shahidi, PhD</strong> — Quality Intelligence, Anduril Industries</div>
+      <div class="tagline">"Production failure is not a model problem. It is an integration, label, position, and generalization problem. Compounded at scale."</div>
+      <img class="slide-img" src="talk.jpg" alt="Paul Shahidi presenting at CVPR 2026" />
+      <div class="authors"><strong>Paul Shahidi, PhD</strong>, Quality Intelligence, Anduril Industries</div>
       <div class="summary">
-        Shahidi presented a practitioner's taxonomy of why vision models that perform well on benchmarks routinely fail their first shopfloor deployment. The framework organizes failure across four compounding layers. <strong>Observability</strong>: optical blind spots and surface geometries the imaging hardware physically cannot resolve — and the exponential cost of pushing coverage from 95% to 99.5% through additional stations and modalities. <strong>Label integrity</strong>: production defect taxonomies are organized by root cause, not visual appearance, creating systematic label noise when visually identical defects carry different annotations. <strong>Position-dependent accuracy</strong>: the cost asymmetry between false positives and false negatives shifts dramatically depending on where inspection sits in the assembly sequence — upstream stations optimize for recall, downstream stations must jointly optimize recall and precision under fundamentally different economics. <strong>Closing the loop</strong>: detection alone delivers limited value until architecturally connected to root-cause attribution and corrective action, transforming inspection from a quality gate into a quality intelligence system. These challenges compound at scale: models that work at one factory regularly fail at another due to tolerance variation, material differences, and hardware configuration drift.
+        Shahidi presented a practitioner's taxonomy of why vision models that perform well on benchmarks routinely fail their first shopfloor deployment. The framework organizes failure across four compounding layers. <strong>Observability</strong>: optical blind spots and surface geometries the imaging hardware physically cannot resolve. The exponential cost of pushing coverage from 95% to 99.5% through additional stations and modalities. <strong>Label integrity</strong>: production defect taxonomies are organized by root cause, not visual appearance, creating systematic label noise when visually identical defects carry different annotations. <strong>Position-dependent accuracy</strong>: the cost asymmetry between false positives and false negatives shifts dramatically depending on where inspection sits in the assembly sequence. Upstream stations optimize for recall; downstream stations must jointly optimize recall and precision under fundamentally different economics. <strong>Closing the loop</strong>: detection alone delivers limited value until architecturally connected to root-cause attribution and corrective action, transforming inspection from a quality gate into a quality intelligence system. These challenges compound at scale: models that work at one factory regularly fail at another due to tolerance variation, material differences, and hardware configuration drift.
       </div>
       <div class="highlights">
         <div class="highlight-item">Observability ceiling: 95% → 99.5% surface coverage costs more than the first 95% combined</div>
-        <div class="highlight-item">Label noise is structural — root-cause taxonomies create ambiguity no annotation effort resolves</div>
+        <div class="highlight-item">Label noise is structural. Root-cause taxonomies create ambiguity no annotation effort resolves.</div>
         <div class="highlight-item">Positional cost asymmetry demands different operating points upstream vs. downstream</div>
         <div class="highlight-item">Foundation models and zero-shot detection won't reach production until cross-site generalization is solved</div>
       </div>
