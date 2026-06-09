@@ -7,7 +7,7 @@ const essays = [
     date: '2026.06',
     abstract:
       'The research I saw at CVPR this year highlighted a shift in model development for industrial systems that was exciting to see. Teams working on adapting general purpose vision language models for industrial inspection and exploring novel ways to sense, train and label data for algorithm training. It seems as if the moment for industrial inspection to go mainstream has finally arrived.',
-    link: '/cvpr-2026/',
+    link: '/cvpr-2026/index.html',
     linkLabel: 'CVPR 2026 Vision Inspection AI Summary',
   },
   {

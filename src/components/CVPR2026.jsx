@@ -87,7 +87,7 @@ export default function CVPR2026() {
             {/* Link to full notes */}
             <div className="mt-6">
               <a
-                href="/cvpr-2026/"
+                href="/cvpr-2026/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase"
