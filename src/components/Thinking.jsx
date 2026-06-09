@@ -3,20 +3,29 @@ import { useState } from 'react'
 const essays = [
   {
     id: '01',
+    title: 'Is the Industry Finally Able to Go from Specialized Models to Zero-Shot Anomaly Detection with VLM Models?',
+    date: '2026.06',
+    abstract:
+      'The research I saw at CVPR this year highlighted a shift in model development for industrial systems that was exciting to see. Teams working on adapting general purpose vision language models for industrial inspection and exploring novel ways to sense, train and label data for algorithm training. It seems as if the moment for industrial inspection to go mainstream has finally arrived.',
+    link: '/cvpr-2026/',
+    linkLabel: 'CVPR 2026 Vision Inspection AI Summary',
+  },
+  {
+    id: '02',
     title: 'The Gap Between ML Prototype and Production System',
     date: '2025.03',
     abstract:
       'Most industrial AI projects stall not because the model does not work, but because the effort required to integrate it into existing production workflows, data pipelines, and operator processes is consistently underestimated. The engineering is often the smaller challenge.',
   },
   {
-    id: '02',
+    id: '03',
     title: 'What Product Thinking Brings to Manufacturing AI',
     date: '2025.01',
     abstract:
       'The manufacturing AI space has plenty of technical capability and not enough product discipline. User research, iterative prioritization, and understanding what quality engineers actually need day-to-day matters more than model sophistication.',
   },
   {
-    id: '03',
+    id: '04',
     title: 'Lessons from Mentoring Deep-Tech Startups',
     date: '2024.09',
     abstract:
@@ -68,6 +77,17 @@ export default function Thinking() {
                     <p className="text-sm text-muted leading-loose max-w-2xl">
                       {essay.abstract}
                     </p>
+                    {essay.link && (
+                      <a
+                        href={essay.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-3 font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase mt-5"
+                      >
+                        <span className="inline-block w-4 h-px bg-muted group-hover:w-8 group-hover:bg-primary transition-all duration-200" />
+                        {essay.linkLabel}
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
