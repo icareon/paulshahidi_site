@@ -1,41 +1,18 @@
-import { useState } from 'react'
+import { Fragment } from 'react'
 
 const essays = [
   {
     id: '01',
-    title: 'Is the Industry Finally Able to Go from Specialized Models to Zero-Shot Anomaly Detection with VLM Models?',
+    title: <>Is the Industry Finally Able to Go from Specialized Models to Zero-Shot<br />Anomaly Detection with VLM Models?</>,
     date: '2026.06',
     abstract:
-      'I presented at CVPR 2026\'s VISION\'26 Workshop in Denver on why most industrial vision models fail their first production deployment — covering the four compounding failure modes that define real manufacturing environments: observability limits, label taxonomy mismatches, position-dependent cost structures, and the gap between detection and corrective action. The ten talks at the workshop showed a field actively closing these gaps. Safran and Boeing demonstrated AI maturing from anomaly flagging to full material understanding and self-validating AR. Samsung and AnomalyVFM pushed on hyperspectral sensing and zero-shot detection without target images. The common thread: foundation models are landing in factories, fabs, and hangars — but the hard work is in the data, the domain, and the deployment.',
+      'I presented at CVPR 2026\'s VISION\'26 Workshop in Denver on why most industrial vision models fail their first production deployment, covering the four compounding failure modes that define real manufacturing environments: observability limits, label taxonomy mismatches, position-dependent cost structures, and the gap between detection and corrective action. The ten talks at the workshop showed a field actively closing these gaps. Safran and Boeing demonstrated AI maturing from anomaly flagging to full material understanding and self-validating AR. Samsung and AnomalyVFM pushed on hyperspectral sensing and zero-shot detection without target images. The common thread: foundation models are landing in factories, fabs, and hangars. But the hard work is in the data, the domain, and the deployment.',
     link: '/cvpr-2026/index.html',
     linkLabel: 'CVPR 2026 — Full Workshop Notes',
-  },
-  {
-    id: '02',
-    title: 'The Gap Between ML Prototype and Production System',
-    date: '2025.03',
-    abstract:
-      'Most industrial AI projects stall not because the model does not work, but because the effort required to integrate it into existing production workflows, data pipelines, and operator processes is consistently underestimated. The engineering is often the smaller challenge.',
-  },
-  {
-    id: '03',
-    title: 'What Product Thinking Brings to Manufacturing AI',
-    date: '2025.01',
-    abstract:
-      'The manufacturing AI space has plenty of technical capability and not enough product discipline. User research, iterative prioritization, and understanding what quality engineers actually need day-to-day matters more than model sophistication.',
-  },
-  {
-    id: '04',
-    title: 'Lessons from Mentoring Deep-Tech Startups',
-    date: '2024.09',
-    abstract:
-      'Working with German deep-tech founders entering the US market has reinforced a consistent pattern: the technology is rarely the bottleneck. Positioning, go-to-market timing, and understanding buyer workflows are where most startups need the most help.',
   },
 ]
 
 export default function Thinking() {
-  const [showAll, setShowAll] = useState(false)
-
   return (
     <section id="thinking" className="relative py-12 md:py-20">
       <div className="section-divider mb-10 md:mb-16" />
@@ -58,10 +35,7 @@ export default function Thinking() {
         {/* Essays */}
         <div className="space-y-0">
           {essays.map((essay, i) => (
-            <div
-              key={essay.id}
-              className={!showAll && i >= 1 ? 'hidden md:block' : ''}
-            >
+            <Fragment key={essay.id}>
               {i > 0 && <div className="section-divider" />}
               <article className="group py-10 md:py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16">
@@ -91,20 +65,9 @@ export default function Thinking() {
                   </div>
                 </div>
               </article>
-            </div>
+            </Fragment>
           ))}
         </div>
-
-        {/* Mobile toggle for additional essays */}
-        {!showAll && essays.length > 1 && (
-          <button
-            onClick={() => setShowAll(true)}
-            className="md:hidden group flex items-center gap-2 font-mono text-xs tracking-wider text-muted hover:text-primary transition-colors uppercase mt-4"
-          >
-            <span className="inline-block w-4 h-px bg-muted group-hover:w-8 group-hover:bg-primary transition-all duration-200" />
-            More essays ({essays.length - 1})
-          </button>
-        )}
       </div>
     </section>
   )
