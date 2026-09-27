@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import FocusAreas from './components/FocusAreas'
 import Work from './components/Work'
+import Speaking from './components/Speaking'
 import Thinking from './components/Thinking'
 import Philosophy from './components/Philosophy'
 import Portfolio from './components/Portfolio'
@@ -20,9 +21,10 @@ export default function App() {
         <Portfolio />
         <Testimonials />
         <Work />
+        <Speaking />
         <Philosophy />
         <Thinking />
-<Contact />
+        <Contact />
       </main>
     </div>
   )

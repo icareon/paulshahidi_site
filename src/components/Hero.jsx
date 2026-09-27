@@ -34,15 +34,25 @@ export default function Hero() {
           </h1>
 
           {/* Positioning */}
-          <p className="text-xl sm:text-2xl md:text-3xl font-light text-accent tracking-tight max-w-3xl leading-snug">
-            I build AI/ML systems for manufacturing.
-          </p>
+          <div>
+            <p className="text-xl sm:text-2xl md:text-3xl font-light text-accent tracking-tight max-w-3xl leading-snug">
+              I build applied production AI systems.
+            </p>
+            <p className="text-sm sm:text-base md:text-lg text-muted tracking-tight mt-2 md:mt-3">
+              The hard part is never the model.
+            </p>
+          </div>
 
           {/* Description */}
-          <p className="text-base md:text-lg text-muted max-w-2xl leading-relaxed">
-            Building AI-powered inspection, predictive maintenance,
-            and quality analytics systems in production environments. From
-            sensor-level algorithms to product strategy at scale.
+          <p className="text-base md:text-lg text-muted max-w-2xl md:max-w-4xl leading-relaxed">
+            Fifteen years turning machine learning into systems people
+            actually use. At Apple I led AI inspection from first prototype
+            to production across flagship product lines, cutting manual
+            inspection labor by orders of magnitude while holding false
+            negatives near zero. At Anduril I lead the AI and analytics
+            function for manufacturing quality. Along the way I have advised
+            ten deep tech startups on bringing industrial AI to market and
+            spoken at CVPR on why most of it fails its first deployment.
           </p>
 
           {/* Navigation links */}

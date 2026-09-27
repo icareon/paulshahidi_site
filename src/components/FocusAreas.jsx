@@ -31,6 +31,12 @@ const areas = [
     description:
       'Translating technical capabilities into product roadmaps that balance user needs with business objectives. This includes user research with manufacturing quality engineers, PRD development, feature prioritization, and cross-functional execution. I have done this both internally at scale and externally through startup mentoring, helping founders validate product-market fit and develop go-to-market strategies.',
   },
+  {
+    title: 'Analytics Platforms & Decision Systems',
+    id: '06',
+    description:
+      'Building the data and analytics layer that engineering and operations teams run on, and the executive reporting that sits on top of it. This covers data pipeline and platform architecture, migration between analytics platforms, application development for engineering users, and automated executive reporting. The recurring problem is not the technology. It is getting one set of numbers that leadership and the floor both trust, and keeping it accurate without anyone hand-assembling it.',
+  },
 ]
 
 function FocusCard({ area }) {

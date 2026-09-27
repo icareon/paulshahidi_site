@@ -3,7 +3,7 @@ import { useState } from 'react'
 const experiences = [
   {
     id: '01',
-    name: 'Sr. Manager, Quality Analytics',
+    name: 'Senior Manager, Quality Intelligence',
     context: 'Anduril',
     period: '2026 \u2013 Present',
     icon: '/logos/anduril.png',
@@ -18,10 +18,10 @@ const experiences = [
     id: '02',
     name: 'AI/ML Product Lead, Manufacturing Quality',
     context: 'Apple',
-    period: '2018 \u2013 2025',
+    period: '2018 \u2013 2026',
     icon: '/logos/apple.png',
     role:
-      'Progressed from ML engineer to product lead over seven years. Owned the product vision, roadmap, and cross-functional execution for AI-powered inspection robot platforms across all major product lines.',
+      'Progressed from ML engineer to product lead over eight years. Owned the product vision, roadmap, and cross-functional execution for AI-powered inspection robot platforms across all major product lines.',
     work:
       'Built the end-to-end strategy for automating visual quality inspection. Conducted user research with manufacturing quality engineers, contract manufacturers, and suppliers to prioritize features. Architected AI inspection agents that analyze quality data, make pass/fail decisions, and trigger corrective actions. Defined hardware and software integration requirements and managed the full lifecycle from concept through production deployment.',
     outcome:

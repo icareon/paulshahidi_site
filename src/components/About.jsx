@@ -18,9 +18,9 @@ export default function About() {
           {/* Content */}
           <div className="lg:col-span-9 space-y-6 text-accent leading-relaxed text-base md:text-lg">
             <p>
-              I build AI/ML quality systems for high-volume
-              manufacturing, where performance is predicated on robustness
-              against variability, throughput pressure, and continuous change.
+              I build AI/ML quality systems, where performance is predicated
+              on robustness against variability, throughput pressure, and
+              continuous change.
               My work is focused on combining operational metrics, AI-guided
               vision systems, and predictive maintenance into production
               platforms that turn sensing and factory data into decisions

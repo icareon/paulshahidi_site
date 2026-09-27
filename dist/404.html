@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Paul Shahidi</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c1017;
+    --primary: #e0e4e8;
+    --accent: #9ca7b4;
+    --muted: #6b7a8d;
+    --signal: #7a9bbd;
+    --border: #1e2a38;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.7;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .wrap {
+    text-align: center;
+    padding: 2rem;
+  }
+  .code {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: var(--accent);
+    font-size: 1.05rem;
+    max-width: 32rem;
+    margin: 0 auto 2rem;
+  }
+  a.home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a.home:hover {
+    color: var(--primary);
+  }
+  a.home .line {
+    display: inline-block;
+    width: 1rem;
+    height: 1px;
+    background: var(--muted);
+    transition: all 0.2s;
+  }
+  a.home:hover .line {
+    width: 2rem;
+    background: var(--signal);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">404 / Not Found</div>
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be broken or the page may have moved.</p>
+    <a class="home" href="/">
+      <span class="line"></span>
+      Back to homepage
+    </a>
+  </div>
+</body>
+</html>
