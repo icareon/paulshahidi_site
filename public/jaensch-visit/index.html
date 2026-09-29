@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What It Actually Takes for German Deep Tech to Scale in the US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:       #0c1017;
+    --bg-card:  #131a24;
+    --border:   #1e2a38;
+    --border-s: #161f2b;
+    --text:     #e0e4e8;
+    --accent:   #9ca7b4;
+    --muted:    #6b7a8d;
+    --signal:   #7a9bbd;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 56px 40px 48px;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .sub {
+    font-size: 0.95rem;
+    color: var(--accent);
+    max-width: 620px;
+    margin: 0 auto 28px;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    border: 1px solid var(--border);
+    padding: 4px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── LAYOUT ──────────────────────────────────── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 32px 0 0;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--text); }
+  .back-link::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background: var(--muted);
+    transition: width 0.2s, background 0.15s;
+  }
+  .back-link:hover::before { width: 28px; background: var(--text); }
+
+  /* ── PHOTO ───────────────────────────────────── */
+  figure {
+    margin: 40px 0 8px;
+  }
+  figure img {
+    width: 100%;
+    border: 1px solid var(--border);
+    display: block;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: top;
+  }
+  figcaption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  /* ── ARTICLE ─────────────────────────────────── */
+  article {
+    margin-top: 44px;
+  }
+  article p {
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--accent);
+    margin-bottom: 26px;
+  }
+  article p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .callout {
+    border-left: 2px solid var(--signal);
+    padding: 4px 0 4px 20px;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text);
+    margin: 40px 0;
+  }
+
+  .byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-s);
+  }
+  .byline strong { color: var(--accent); font-weight: 500; }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 40px 20px 36px; }
+    .container { padding: 0 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">German Accelerator · San Francisco · September 2026</div>
+  <h1>What It Actually Takes for German Deep Tech to Scale in the US</h1>
+  <p class="sub">Notes from a briefing I gave to a delegation from Germany's Federal Ministry for Economic Affairs and Energy during their visit to Silicon Valley.</p>
+  <div class="badges">
+    <span class="badge">BMWE Delegation</span>
+    <span class="badge">German Accelerator</span>
+    <span class="badge">US Market Entry</span>
+  </div>
+</header>
+
+<div class="container">
+  <a href="/" class="back-link">paulshahidi.com</a>
+
+  <figure>
+    <img src="group-photo.jpg" alt="Paul Shahidi with the delegation in San Francisco, September 2026" />
+    <figcaption>With the delegation in San Francisco, September 2026.</figcaption>
+  </figure>
+
+  <article>
+    <p>
+      In September 2026, a delegation from Germany's Federal Ministry for Economic Affairs and Energy came through Silicon Valley as part of a broader program supporting German companies' expansion into the US, organized with German Accelerator and partner organizations. As a German Accelerator mentor, I was asked to share a short briefing on what I've seen, firsthand, actually determine whether a German deep-tech company succeeds in the US market. This is roughly what I told them.
+    </p>
+
+    <p>
+      I started with capital. German startups raised €5.3 billion in the first half of 2026, up 14% from the year before, but across just 354 funding rounds — down 11%. Capital isn't disappearing; it's concentrating into fewer, larger bets. That shift raises the bar for everyone else. The practical implication: the more selective domestic capital becomes, the more a company's ability to reach international markets matters. The real strategic question for German deep tech usually isn't whether the technology is good enough — it almost always is. It's how that technology becomes an internationally scalable company.
+    </p>
+
+    <p>
+      Introductions and funding open doors. They don't, by themselves, build a business. What does is proof, earned in a specific order. First, <strong>a market problem</strong>: an urgent pain point, a customer with the budget and authority to buy, and a benefit that can be measured. Second, <strong>a pilot</strong>: deployment under real US operating conditions, evaluated against success criteria agreed to in advance. Third, <strong>scale</strong>: a credible plan for adapting the product, integrating it into a customer's existing systems, and actually delivering and supporting it at volume. Skip a stage, or blur the order, and the next round of growth capital gets harder to raise, not easier.
+    </p>
+
+    <p>
+      That sequence plays out differently depending on the domain. In industrial AI, the translation runs from a model that performs well in a demo to production value a plant manager can point to on a scorecard. In defense and other high-reliability sectors, it runs from technical performance to reliability and the ability to deliver consistently, under scrutiny, over time. In both cases, the US market tests assumptions earlier and more bluntly than most home markets do. That's uncomfortable. It's also useful — the capabilities a company builds to survive that testing, sharper positioning, harder customer proof, a real scaling plan, tend to make the company better at home too.
+    </p>
+
+    <div class="callout">
+      Contacts open doors. What happens after is an operational discipline, not a networking outcome.
+    </div>
+
+    <p>
+      That was my closing point to the delegation. German deep-tech companies need practitioners who understand both German engineering culture and how American technology companies actually execute — people who can help prioritize the right customers, build proof points that hold up, and make product decisions with the US market in mind. That's the perspective I try to bring: fifteen years operationalizing AI and machine learning technologies in manufacturing, heavy industry, and other mission-critical environments, and mentoring German deep-tech founders through Start2 Group and German Accelerator as they take this on themselves.
+    </p>
+
+    <p>
+      If you're thinking about US expansion, industrial AI, manufacturing, or defense tech, I'd welcome the conversation.
+    </p>
+
+    <div class="byline">
+      <strong>Dr. Paul Shahidi</strong> · German Accelerator Mentor · paulshahidi.com
+    </div>
+  </article>
+</div>
+
+<footer>
+  German Accelerator · BMWE Silicon Valley Delegation, San Francisco · September 2026
+</footer>
+
+</body>
+</html>

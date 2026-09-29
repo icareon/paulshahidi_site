@@ -3,6 +3,15 @@ import { Fragment } from 'react'
 const essays = [
   {
     id: '01',
+    title: 'What It Actually Takes for German Deep Tech to Scale in the US',
+    date: '2026.09',
+    abstract:
+      "When a delegation from Germany's Federal Ministry for Economic Affairs and Energy visited Silicon Valley, I shared a few thoughts on what actually gets German deep-tech companies into the US market. My argument: introductions and funding open doors, but they don't build a business. What does is operational — finding a customer with an urgent problem, adapting the product to how Americans buy and deploy, proving its value under real conditions, and building the capability to deliver at scale. Handled well, that process does more than win a US foothold; it sharpens the company at home. This is the point of view I bring from my 15 years of experience operationalizing AI/ML algorithms for manufacturing and heavy industry applications. If you're thinking about US expansion, industrial AI, manufacturing, or defense tech, I'd welcome the conversation.",
+    link: '/jaensch-visit/index.html',
+    linkLabel: 'German Accelerator Briefing — Full Notes',
+  },
+  {
+    id: '02',
     title: <>Is the Industry Finally Able to Go from Specialized Models to Zero-Shot<br />Anomaly Detection with VLM Models?</>,
     date: '2026.06',
     abstract:
